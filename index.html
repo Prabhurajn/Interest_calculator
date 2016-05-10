@@ -6,51 +6,48 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Narayanpethkar Interest Calculator</title>
+        <title>Interest Calculator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function calculate_interest() {
+                var pa = document.getElementById('field_pa').value;
+                var sd = document.getElementById('field_s_date').value;
+                var ed = document.getElementById('field_e_date').value;
+                var rot = document.getElementById('field_rot').value;
+            }
+        </script>
     </head>
     <body>
-        <div>Narayanpethkar Interest Calculator</div>
+        <div>Interest Calculator</div>
         <div>
-            <form action="calculate_interest()">
+            <form>
                 <table>
                     <tr>
                         <td>Principle Amount : </td>
-                        <td><input type="number" name="field_pa" required="required"></td>
+                        <td><input type="number" name="field_pa" id="field_pa" required="required"></td>
                     </tr>
-
                     <tr>
                         <td>Start Date :</td>
-                        <td><input type="date" name="field_s_date" required="required"></td>
+                        <td><input type="date" name="field_s_date" id="field_s_date" required="required"></td>
                     </tr>
 
                     <tr>
                         <td>End Date :</td>
-                        <td><input type="date" name="field_e_date" required="required"></td>
+                        <td><input type="date" name="field_e_date" id="field_e_date" required="required"></td>
                     </tr>
 
                     <tr>
                         <td>Rate of Interest :</td>
-                        <td><input type="number" name="field_rot" value="2.5" required="required"></td>
+                        <td><input type="number" name="field_rot" id="field_rot" value="2.5" required="required"></td>
                     </tr>
 
                     <tr>
-                        <td><input type="submit" name="Calculate" value="Calculate"></td>
+                        <td><input type="submit" onClick="calculate_interest()"></td>
                         <td><input type="reset"></td>
                     </tr>
                 </table>
             </form>
-
         </div>
-        <script>
-            public function validate_date() {
-                //@todo start date should not greater than end date
-            }
-            
-            public function calculate_interest() {
-                //@todo main business login of form
-            }
-        </script>
     </body>
 </html>
