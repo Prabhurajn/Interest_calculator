@@ -15,7 +15,21 @@ and open the template in the editor.
                 var sd = document.getElementById('field_s_date').value;
                 var ed = document.getElementById('field_e_date').value;
                 var rot = document.getElementById('field_rot').value;
+                alert(calculateDifference(sd, ed));
             }
+            function calculateDifference(startDate, endDate) {
+                startDate = new Date(startDate);
+                endDate = new Date(endDate);
+                var diff = Math.floor(endDate.getTime() - startDate.getTime());
+                var milliSeconds =  1000 * 60 * 60 * 24;;
+
+                var days = Math.floor(diff/milliSeconds);
+                var months = Math.floor(days/31);
+                var years = Math.floor(months/12);
+
+                return ("Difference is " + years + " years " + months + " months " + days + " days.");
+            }
+
         </script>
     </head>
     <body>
@@ -43,7 +57,7 @@ and open the template in the editor.
                     </tr>
 
                     <tr>
-                        <td><input type="submit" onClick="calculate_interest()"></td>
+                        <td><button name="data" type="button" onclick="calculate_interest()">Submit</td>
                         <td><input type="reset"></td>
                     </tr>
                 </table>
